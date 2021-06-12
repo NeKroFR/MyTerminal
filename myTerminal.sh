@@ -40,6 +40,15 @@ case "$choice" in
         echo "${cyan}installing oh-my-zsh${default}"
         apt-get install wget
         sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+        echo "${cyan}installing plugins${default}"
+        apt-get install git
+        git  clone https://github.com/zsh-users/zsh-completions
+        git  clone https://github.com/zsh-users/zsh-autosuggestions
+        git  clone https://github.com/zsh-users/zsh-syntax-highlighting
+        mv zsh* .oh-my-zsh/plugins
+        #replace .zshrc by my config
+        source .zshrc
+        
         
         echo "${red}You need to reboot your system to aply changes."
 
