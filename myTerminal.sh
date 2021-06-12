@@ -34,8 +34,12 @@ read choice
 
 case "$choice" in
     "y" | "Y")
+        echo "${cyan}Installing zsh${default}"
         apt-get install zsh
         chsh /bin/zsh
+        echo "${cyan}installing oh-my-zsh${default}"
+        apt-get install wget
+        sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
         
         echo "${red}You need to reboot your system to aply changes."
 
