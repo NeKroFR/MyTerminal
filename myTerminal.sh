@@ -34,6 +34,12 @@ read choice
 
 case "$choice" in
     "y" | "Y")
+        apt-get install zsh
+        chsh /bin/zsh
+        
+        echo "${red}You need to reboot your system to aply changes."
+
+        ;;
         
         ;;
     "n" | "N")
@@ -41,5 +47,6 @@ case "$choice" in
 
     *)
         echo "${red}Something unexpected happened"
+        exit 255
 
 esac
