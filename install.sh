@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 red=`echo -en "\e[31m"`
@@ -26,7 +26,7 @@ echo "           |___/                        \n"
 
 
 
-printf "${green}Do you want to do the installation?\n[Y/N]"
+printf "${green}Do you want to proceed the installation?\n[Y/N]"
 printf "${default}"
 
 read choice
@@ -50,16 +50,11 @@ case "$choice" in
         source .zshrc
         
         
-        echo "${red}You need to reboot your system to aply changes."
-
-        ;;
-        
-        ;;
+        echo "${red}You need to reboot your system to aply changes.${default}"
+             ;;
     "n" | "N")
         exit ;;
-
     *)
         echo "${red}Something unexpected happened"
         exit 255
-
 esac
